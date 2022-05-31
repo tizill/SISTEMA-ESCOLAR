@@ -15,7 +15,8 @@ class EscolaController extends Controller
      */
     public function index()
     {
-        //
+        $cadastros = tb_escola::get();
+        return view('cadastros.list', ['cadastros' => $cadastros]);
     }
 
     /**
@@ -53,8 +54,7 @@ class EscolaController extends Controller
      */
     public function show()
     {
-        $cadastros = tb_escola::get();
-        return view('cadastros.list', ['cadastros' => $cadastros]);
+        //
     }
 
     /**

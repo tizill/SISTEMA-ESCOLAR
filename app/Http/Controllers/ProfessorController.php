@@ -16,7 +16,8 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-        //
+        $cadastros = tb_professor::join('tb_turmas', 'tb_professors.turma', '=', 'tb_turmas.id_turma')->get();
+        return view('cadastros.listProfessor', ['cadastros' => $cadastros]);
     }
 
     /**
@@ -55,8 +56,7 @@ class ProfessorController extends Controller
      */
     public function show()
     {
-        $cadastros = tb_professor::join('tb_turmas', 'tb_professors.turma', '=', 'tb_turmas.id_turma')->get();
-        return view('cadastros.listProfessor', ['cadastros' => $cadastros]);
+       //
     }
 
     /**
